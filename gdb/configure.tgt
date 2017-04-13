@@ -73,6 +73,11 @@ arm*-wince-pe | arm*-*-mingw32ce*)
 	gdb_target_obs="arm-tdep.o arm-wince-tdep.o"
 	build_gdbserver=yes
 	;;
+arm*-*-eabifdpic*)
+	# Target: ARM embedded system with FDPIC ABI
+	gdb_target_obs="arm-tdep.o solib-fdpic.o"
+	gdb_sim=../sim/arm/libsim.a
+	;;
 arm*-*-linux*)
 	# Target: ARM based machine running GNU/Linux
 	gdb_target_obs="arm-tdep.o arm-linux-tdep.o glibc-tdep.o \
